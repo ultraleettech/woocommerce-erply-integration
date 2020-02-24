@@ -1,0 +1,52 @@
+version: '3.7'
+
+networks:
+  default:
+    external:
+      name: wp_network
+
+services:
+
+  wordpress:
+    image: wordpress
+    restart: always
+    ports:
+      - 6080:80
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: user
+      WORDPRESS_DB_PASSWORD: pass
+      WORDPRESS_DB_NAME: db
+      WORDPRESS_DEBUG: '1'
+    volumes:
+      - wp-themes:/var/www/html/wp-content/themes/
+      - wp-plugins:/var/www/html/wp-content/plugins/
+      - wp-uploads:/var/www/html/wp-content/uploads/
+      - .:/var/www/html/wp-content/plugins/woocommerce-erply-integration/
+
+  db:
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+      MYSQL_RANDOM_ROOT_PASSWORD: '1'
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  pma:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    environment:
+      - PMA_HOST=db
+    ports:
+      - 6081:80
+    volumes:
+      - /sessions
+
+volumes:
+  wp-themes:
+  wp-plugins:
+  wp-uploads:
+  mysql-data:

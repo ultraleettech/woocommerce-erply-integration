@@ -1,0 +1,17 @@
+{
+    "name": "ultraleet/wp",
+    "description": "Ultimate Wordpress Plugin helper library that will take WP plugin development to the next level.",
+    "type": "library",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Rene Aavik",
+            "email": "renx81@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {"Ultraleet\\WP\\": "src/"}
+    },
+    "require": {}
+}

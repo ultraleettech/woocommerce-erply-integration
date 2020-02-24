@@ -1,0 +1,17 @@
+{
+    "name": "ultraleet/wp-requirements-checker",
+    "description": "Helper library for WordPress plugins to check for minimum PHP and WP versions.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rene Aavik",
+            "email": "renx81@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {"Ultraleet\\WP\\": "src/"}
+    },
+    "require": {}
+}
