@@ -18,13 +18,13 @@ class TimePicker extends Text
         return [
             'styles' => [
                 'jquery-timepicker' => [
-                    'path' => '//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css',
+                    'path' => ULTRALEET_WP_SETTINGS_ASSETS_URL . 'plugins/jquery-timepicker/jquery.timepicker.min.css',
                     'dependencies' => ['jquery-ui-style'],
                 ],
             ],
             'scripts' => [
                 'jquery-timepicker' => [
-                    'path' => '//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js',
+                    'path' => ULTRALEET_WP_SETTINGS_ASSETS_URL . 'plugins/jquery-timepicker/jquery.timepicker.min.js',
                     'dependencies' => ['jquery-ui-core'],
                 ],
             ],

@@ -8,6 +8,10 @@ TODO
 
 ## Changelog
 
+### 0.1.3 (2020-02-25)
+
+* Fixed: External dependency on jquery-timepicker plugin
+
 ### 0.1.2 (2019-10-20)
 
 * Fixed: Save sections containing only unchecked checkboxes

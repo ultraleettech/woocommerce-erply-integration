@@ -1126,23 +1126,23 @@
     },
     {
         "name": "ultraleet/wp-settings",
-        "version": "0.1.2",
-        "version_normalized": "0.1.2.0",
+        "version": "0.1.3",
+        "version_normalized": "0.1.3.0",
         "source": {
             "type": "git",
             "url": "https://github.com/ultraleettech/wp-settings.git",
-            "reference": "6b36a5c22bf496218cfded1590814c627772c816"
+            "reference": "0961b6239dce4193d28eaa8e9a8ed07959114855"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/ultraleettech/wp-settings/zipball/6b36a5c22bf496218cfded1590814c627772c816",
-            "reference": "6b36a5c22bf496218cfded1590814c627772c816",
+            "url": "https://api.github.com/repos/ultraleettech/wp-settings/zipball/0961b6239dce4193d28eaa8e9a8ed07959114855",
+            "reference": "0961b6239dce4193d28eaa8e9a8ed07959114855",
             "shasum": ""
         },
         "require": {
             "php": ">=7.2"
         },
-        "time": "2019-10-20T10:29:17+00:00",
+        "time": "2020-02-25T05:40:43+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
