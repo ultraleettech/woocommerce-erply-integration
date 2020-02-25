@@ -421,7 +421,7 @@ class Synchronization extends AbstractComponent
      */
     public function page($type = null)
     {
-        $type = $type ?: $_GET['type'] ?? null;
+        $type = $type ?: filter_input(INPUT_GET,'type');
         if ($type) {
             $this->runSynchronizer($type);
             return;

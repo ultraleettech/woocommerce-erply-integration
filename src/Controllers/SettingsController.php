@@ -14,7 +14,7 @@ class SettingsController extends AbstractController
      */
     public function settings()
     {
-        $page = $_GET['tab'] ?? '';
+        $page = filter_input(INPUT_GET, 'tab') ?? '';
         return $settings = $this->container->settings->renderPage($page);
     }
 }

@@ -176,9 +176,9 @@ class Router extends AbstractComponent
     protected function getPath(bool $raw = false)
     {
         if (defined('DOING_AJAX')) {
-            $path = $_REQUEST['action'];
+            $path = filter_input(INPUT_REQUEST, 'action');
         } elseif (isset($_GET['page'])) {
-            $path = $_GET['page'];
+            $path = filter_input(INPUT_GET, 'page');
         } else {
             throw new \RuntimeException('Trying to resolve a route but no path scenario was found!');
         }
