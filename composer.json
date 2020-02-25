@@ -8,12 +8,6 @@
             "email": "renx81@gmail.com"
         }
     ],
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/ultraleettech/wp-scheduler"
-        }
-    ],
     "require": {
         "php": ">=7.2.0",
         "ext-curl": "*",
@@ -23,7 +17,7 @@
         "symfony/routing": "^4.3",
         "doctrine/annotations": "^1.7",
         "symfony/config": "^4.3",
-        "ultraleet/wp-scheduler": "dev-master",
+        "ultraleet/wp-scheduler": "^0.1",
         "ultraleet/wp-requirements-checker": "^1.0-dev"
     },
     "autoload": {
