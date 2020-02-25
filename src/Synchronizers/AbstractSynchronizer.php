@@ -370,6 +370,19 @@ abstract class AbstractSynchronizer
     }
 
     /**
+     * Determine whether woocommerce brands plugin is active.
+     *
+     * @return bool
+     */
+    protected function isBrandsSupported(): bool
+    {
+        if (! isset($this->isBrandsSupported)) {
+            $this->isBrandsSupported = is_plugin_active('woocommerce-brands/woocommerce-brands.php');
+        }
+        return $this->isBrandsSupported;
+    }
+
+    /**
      * Log query results based on whether it was a WP error.
      *
      * @param $message

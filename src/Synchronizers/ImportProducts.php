@@ -154,7 +154,7 @@ class ImportProducts extends AbstractSynchronizer
         if (isset($data['record'])) {
             $product = $data;
             $record = $product['record'];
-            $this->originalProductId = $product['originalProductId'] ?? $product['productID'];
+            $this->originalProductId = $product['originalProductId'] ?? $record['productID'];
         } else {
             $product = array_shift($data);
             $record = $product['record'];
@@ -376,6 +376,11 @@ class ImportProducts extends AbstractSynchronizer
 
         // save product
         $id = $product->save();
+
+        // product brand
+        if ($this->isBrandsSupported() && $record['brandName']) {
+            wp_set_object_terms($id, [$record['brandName']], 'product_brand');
+        }
 
         // queue variations, translations, and publish
         $canPublishNow = true;
