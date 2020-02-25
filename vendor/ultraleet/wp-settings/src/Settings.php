@@ -12,8 +12,6 @@ use Ultraleet\WP\Settings\Exceptions\MissingArgumentException;
  */
 class Settings
 {
-    const VERSION = '1.0.0';
-
     protected $pluginBaseFile;
     protected $prefix;
     protected $assetsPath;
@@ -36,13 +34,13 @@ class Settings
     /**
      * Library constructor.
      *
-     * @param string $prefix The identifier to prepend to option names. Usually a plugin name.
+     * @param string $prefix Unique identifier to prepend to option names. Usually derived from plugin name.
      * @param array $config Configuration array for all pages, sections, and individual fields.
      * @param array $args {
      *      @type string $pluginBaseFile The full path to the main plugin file.
-     *      @type string $assetsPath Url path of the assets file, relative of which included assets on settings pages are located.
-     *      @type array|string $styleDependencies Dependencies all asset styles depend upon.
-     *      @type array|string $scriptDependencies Dependencies all asset scripts depend upon.
+     *      @type string $assetsPath Url path of the assets file, relative to which included assets on settings pages are located.
+     *      @type array|string $styleDependencies Dependencies all style assets depend upon.
+     *      @type array|string $scriptDependencies Dependencies all script assets depend upon.
      *      @type string $jsonFormat String format (containing %s for JSON data) for adding config to a settings page.
      *      @type callable $isSettingsPage Callback for determining whether we are on a settings page.
      * }
@@ -70,10 +68,13 @@ class Settings
         $this->isSettingsPageCallback = $args['isSettingsPage'];
         $this->jsonFormat = $args['jsonFormat'];
 
-        if ($this->isSettingsPage()) {
-            add_action('admin_enqueue_scripts', [$this, 'enqueueAdminAssets'], 100);
+        if (is_admin()) {
+            if ($this->isSettingsPage()) {
+                add_action('admin_enqueue_scripts', [$this, 'enqueueAdminAssets'], 100);
+                add_action('admin_notices', [$this, 'adminNotices']);
+            }
+            add_action('wp_loaded', [$this, 'savePage']);
         }
-        add_action('wp_loaded', [$this, 'savePage']);
     }
 
     /**
@@ -111,8 +112,6 @@ class Settings
     /**
      * Action: admin_enqueue_scripts
      *
-     * @param string $hook
-     *
      * @todo Add ULWP as a dependency when that library has been extracted.
      */
     public function enqueueAdminAssets()
@@ -147,7 +146,7 @@ class Settings
      * @param string $page
      * @return mixed|string
      */
-    public function getValue(string $field, string $section, string $page = '')
+    public function getSettingValue(string $field, string $section, string $page = '')
     {
         $page = $this->getPageIndex($page);
         $optionName = $this->getOptionName($page, $section);
@@ -282,6 +281,23 @@ class Settings
     }
 
     /**
+     * Add relevant admin notices.
+     */
+    public function adminNotices()
+    {
+        if (isset($_GET['updated'])) {
+            $notice = __('Settings saved.');
+            echo <<<HTML
+<div class="notice notice-success is-dismissible">
+    <p>
+        <strong>$notice</strong>
+    </p>
+</div>
+HTML;
+        }
+    }
+
+    /**
      * Save all settings sections when a settings page form is submitted.
      */
     public function savePage()
@@ -294,7 +310,7 @@ class Settings
         foreach ($this->getPage($pageId)->getSections() as $sectionId => $section) {
             $section->saveSettings();
         }
-        wp_safe_redirect($_SERVER['HTTP_REFERER']);
+        wp_safe_redirect(add_query_arg(['updated' => 1], $_SERVER['HTTP_REFERER']));
         exit;
     }
 

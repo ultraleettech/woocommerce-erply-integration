@@ -69,7 +69,7 @@ class ComposerStaticInit25923953663eeb67229fa3431c3d952e
         ),
         'Ultraleet\\WP\\Settings\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/lib/ultraleet/wp-settings/src',
+            0 => __DIR__ . '/..' . '/ultraleet/wp-settings/src',
         ),
         'Ultraleet\\WP\\Scheduler\\' => 
         array (

@@ -1123,5 +1123,43 @@
             }
         ],
         "description": "Library for Wordpress plugins to schedule background tasks"
+    },
+    {
+        "name": "ultraleet/wp-settings",
+        "version": "0.1.2",
+        "version_normalized": "0.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/ultraleettech/wp-settings.git",
+            "reference": "6b36a5c22bf496218cfded1590814c627772c816"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/ultraleettech/wp-settings/zipball/6b36a5c22bf496218cfded1590814c627772c816",
+            "reference": "6b36a5c22bf496218cfded1590814c627772c816",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=7.2"
+        },
+        "time": "2019-10-20T10:29:17+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Ultraleet\\WP\\Settings\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Rene Aavik",
+                "email": "renx81@gmail.com"
+            }
+        ],
+        "description": "WordPress settings abstraction library for simplifying creation of plugin settings pages."
     }
 ]

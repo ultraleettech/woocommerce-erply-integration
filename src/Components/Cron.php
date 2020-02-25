@@ -100,17 +100,17 @@ class Cron extends AbstractComponent
         if ($reschedule) {
             $this->unschedule(false);
         }
-        if (! wp_next_scheduled('wcerply_queue') && $this->settings->getValue('enabled', 'schedule', 'cron')) {
+        if (! wp_next_scheduled('wcerply_queue') && $this->settings->getSettingValue('enabled', 'schedule', 'cron')) {
             $verb = $reschedule ? 'Rescheduling' : 'Scheduling';
             $this->logger->debug("$verb cron event for generating queue.");
-            $time = $this->settings->getValue('start', 'schedule', 'cron');
+            $time = $this->settings->getSettingValue('start', 'schedule', 'cron');
             $timestamp = strtotime("today $time");
             if ($timestamp < time()) {
                 $timestamp = strtotime("tomorrow $time");
             }
             wp_schedule_event(
                 $timestamp,
-                $this->settings->getValue('frequency', 'schedule', 'cron'),
+                $this->settings->getSettingValue('frequency', 'schedule', 'cron'),
                 'wcerply_queue'
             );
         }

@@ -12,7 +12,7 @@ use Ultraleet\WP\Settings\Settings as SettingsAPI;
  */
 class Settings extends AbstractComponent
 {
-    /** @var Settings */
+    /** @var SettingsAPI */
     private $settingsApi;
 
     /**

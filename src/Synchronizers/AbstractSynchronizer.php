@@ -134,7 +134,7 @@ abstract class AbstractSynchronizer
     {
         return in_array(
             static::getName(),
-            WcErply::$plugin->settings->getValue('workers', 'active', 'components')
+            WcErply::$plugin->settings->getSettingValue('workers', 'active', 'components')
         );
     }
 

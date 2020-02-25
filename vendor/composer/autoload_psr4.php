@@ -8,7 +8,7 @@ $baseDir = dirname($vendorDir);
 return array(
     'Ultraleet\\WcErply\\' => array($baseDir . '/src'),
     'Ultraleet\\WP\\WooCommerce\\' => array($baseDir . '/lib/ultraleet/wp-woocommerce/src'),
-    'Ultraleet\\WP\\Settings\\' => array($baseDir . '/lib/ultraleet/wp-settings/src'),
+    'Ultraleet\\WP\\Settings\\' => array($vendorDir . '/ultraleet/wp-settings/src'),
     'Ultraleet\\WP\\Scheduler\\' => array($vendorDir . '/ultraleet/wp-scheduler/classes'),
     'Ultraleet\\WP\\' => array($baseDir . '/lib/ultraleet/wp/src', $baseDir . '/lib/ultraleet', $vendorDir . '/ultraleet/wp-requirements-checker/src'),
     'Ultraleet\\Erply\\' => array($baseDir . '/lib/ultraleet/erply/src'),

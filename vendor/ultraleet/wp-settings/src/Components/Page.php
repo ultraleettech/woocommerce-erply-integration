@@ -129,7 +129,7 @@ class Page extends AbstractComponent
                 $handle,
                 $config['path'],
                 $config['dependencies'],
-                WP_DEBUG ? time() : '',
+                ULTRALEET_WP_SETTINGS_ASSETS_VERSION,
                 $config['media']
             );
         }
@@ -152,7 +152,7 @@ class Page extends AbstractComponent
                 $handle,
                 $config['path'],
                 $config['dependencies'],
-                WP_DEBUG ? time() : '',
+                ULTRALEET_WP_SETTINGS_ASSETS_VERSION,
                 $config['inFooter']
             );
         }

@@ -59,9 +59,9 @@ class ErplyApi extends AbstractComponent
 
         // Configuration settings
         $settings = $this->settings;
-        $this->EAPI->clientCode = $settings->getValue('customer_code', 'api', 'general');
-        $this->EAPI->username = $settings->getValue('username', 'api', 'general');
-        $this->EAPI->password = $settings->getValue('password', 'api', 'general');
+        $this->EAPI->clientCode = $settings->getSettingValue('customer_code', 'api', 'general');
+        $this->EAPI->username = $settings->getSettingValue('username', 'api', 'general');
+        $this->EAPI->password = $settings->getSettingValue('password', 'api', 'general');
         $this->EAPI->url = "https://".$this->EAPI->clientCode.".erply.com/api/";
     }
 

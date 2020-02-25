@@ -18,13 +18,13 @@
         "doctrine/annotations": "^1.7",
         "symfony/config": "^4.3",
         "ultraleet/wp-scheduler": "^0.1",
-        "ultraleet/wp-requirements-checker": "^1.0-dev"
+        "ultraleet/wp-requirements-checker": "^1.0-dev",
+        "ultraleet/wp-settings": "^0.1.2"
     },
     "autoload": {
         "psr-4": {
             "Ultraleet\\WcErply\\": "src/",
             "Ultraleet\\WP\\": ["lib/ultraleet/wp/src/", "lib/ultraleet/"],
-            "Ultraleet\\WP\\Settings\\": "lib/ultraleet/wp-settings/src/",
             "Ultraleet\\WP\\WooCommerce\\": "lib/ultraleet/wp-woocommerce/src/",
             "Ultraleet\\Erply\\": "lib/ultraleet/erply/src/",
             "Ultraleet\\": "src/",

@@ -1,0 +1,19 @@
+{
+    "name": "ultraleet/wp-settings",
+    "description": "WordPress settings abstraction library for simplifying creation of plugin settings pages.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Rene Aavik",
+            "email": "renx81@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {
+        "psr-4": {"Ultraleet\\WP\\Settings\\": "src/"}
+    },
+    "require": {
+        "php": ">=7.2"
+    }
+}

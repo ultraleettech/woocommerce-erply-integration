@@ -154,6 +154,7 @@ abstract class AbstractField
             $name = str_replace('_', ' ', ucfirst($this->config['type']));
             throw new NoValueException("$name field does not support values.");
         }
+        settype($value, $this->valueType());
         $this->value = $value;
     }
 

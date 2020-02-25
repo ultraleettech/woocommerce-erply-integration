@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "222258f9eadffd8f16bff579db5eaa38",
+    "content-hash": "3f5de69ee8cfb8a8bf57faea0e735fd0",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1090,6 +1090,42 @@
             ],
             "description": "Library for Wordpress plugins to schedule background tasks",
             "time": "2020-02-25T03:58:19+00:00"
+        },
+        {
+            "name": "ultraleet/wp-settings",
+            "version": "0.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ultraleettech/wp-settings.git",
+                "reference": "6b36a5c22bf496218cfded1590814c627772c816"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ultraleettech/wp-settings/zipball/6b36a5c22bf496218cfded1590814c627772c816",
+                "reference": "6b36a5c22bf496218cfded1590814c627772c816",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Ultraleet\\WP\\Settings\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Rene Aavik",
+                    "email": "renx81@gmail.com"
+                }
+            ],
+            "description": "WordPress settings abstraction library for simplifying creation of plugin settings pages.",
+            "time": "2019-10-20T10:29:17+00:00"
         }
     ],
     "packages-dev": [],

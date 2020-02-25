@@ -347,7 +347,7 @@ class ImportProducts extends AbstractSynchronizer
         $product->set_description(wp_filter_post_kses($record['longdesc']));
         $product->set_short_description($record['description']);
         $product->set_manage_stock(!$record['nonStockProduct'] && 'MATRIX' !== $record['type']);
-        $product->set_backorders($this->settings->getValue('default', 'backorders', 'products'));
+        $product->set_backorders($this->settings->getSettingValue('default', 'backorders', 'products'));
         $product->set_reviews_allowed(get_option('woocommerce_enable_reviews'));
         $product->set_weight($record['netWeight'] ?? 0);
         $product->set_length($record['length'] ?? 0);
