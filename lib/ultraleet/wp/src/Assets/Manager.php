@@ -42,9 +42,8 @@ class Manager
 
     public function loadRequireJs()
     {
-        $version = ULTRALEET_WP_REQUIREJS_VERSION;
         $min = (defined('WP_DEBUG') && WP_DEBUG) ? '' : '.min';
-        $url = "//cdnjs.cloudflare.com/ajax/libs/require.js/$version/require$min.js";
+        $url = $this->getAssetUrl("plugins/require.js/require$min.js");
         $baseUrl = $this->getAssetUrl('js');
         echo "<script type='text/javascript' src='$url'></script>\n";
         echo "<script type='text/javascript'>\n";

@@ -4,7 +4,6 @@
  * Version constants.
  */
 define('ULTRALEET_WP_VERSION', '0.1.0');
-define('ULTRALEET_WP_REQUIREJS_VERSION', '2.3.6');
 
 /**
  * Path constants.
