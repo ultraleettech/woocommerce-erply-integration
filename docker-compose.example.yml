@@ -22,7 +22,7 @@ services:
       - wp-themes:/var/www/html/wp-content/themes/
       - wp-plugins:/var/www/html/wp-content/plugins/
       - wp-uploads:/var/www/html/wp-content/uploads/
-      - .:/var/www/html/wp-content/plugins/woocommerce-erply-integration/
+      - .:/var/www/html/wp-content/plugins/ultraleet-wc-erply-integration/
 
   db:
     image: mysql:5.7
